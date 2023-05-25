@@ -6,7 +6,7 @@
 /*   By: Verdoodt <Verdoodt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 12:17:05 by devoma            #+#    #+#             */
-/*   Updated: 2023/05/21 20:27:49 by Verdoodt         ###   ########.fr       */
+/*   Updated: 2023/05/25 20:40:45 by Verdoodt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(int ac, char **av)
 
 	map = check_arguments(ac, av);
 	if (!map)
-		return (0);
+		exit(0);
 	data.args = create_struct(map);
 	init_all_structs(&data);
 	data.game->mlx = mlx_init();

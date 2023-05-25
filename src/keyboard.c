@@ -6,7 +6,7 @@
 /*   By: Verdoodt <Verdoodt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 12:16:59 by devoma            #+#    #+#             */
-/*   Updated: 2023/05/23 16:55:43 by Verdoodt         ###   ########.fr       */
+/*   Updated: 2023/05/25 20:30:24 by Verdoodt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int	key_ft(int key, t_data *data)
 		move_down(data);
 	if (key == ESC)
 		ft_close(key, data);
+	system("leaks cub3d");
 	init_win(data);
 	return (0);
 }

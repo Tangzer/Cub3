@@ -6,7 +6,7 @@
 /*   By: Verdoodt <Verdoodt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 12:17:19 by devoma            #+#    #+#             */
-/*   Updated: 2023/05/19 13:16:40 by Verdoodt         ###   ########.fr       */
+/*   Updated: 2023/05/25 20:33:30 by Verdoodt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	get_img_xpm(t_data *data)
 	if (!data->game->no || !data->game->so || !data->game->ea
 		|| !data->game->we)
 	{
-		write(2, "No such path\n", 13);
+		printf("Error\nWrong path\n");
 		exit(1);
 	}
 }
