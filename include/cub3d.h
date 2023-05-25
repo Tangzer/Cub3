@@ -26,13 +26,21 @@
 # define ROTATE_SPEED	0.15
 # define MOVE_SPEED		0.2
 
-# define RIGHT			124
-# define LEFT			123
-# define ESC				53
-# define A				0
-# define S				1
-# define D				2
-# define W				13
+//# define RIGHT			124
+//# define LEFT			123
+//# define ESC			53
+//# define A				0
+//# define S				1
+//# define D				2
+//# define W				13
+
+# define RIGHT	65363
+# define LEFT	65361
+# define ESC	65307
+# define A		97
+# define S		115
+# define D		100
+# define W		119
 
 # define BUFFER_SIZE 10
 

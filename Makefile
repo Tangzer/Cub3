@@ -6,14 +6,15 @@ NAME	= cub3d
 
 CC 		= gcc
 
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror -O3
 
 DFLAGS	= -MMD -MF $(@:.o=.d)
 MAKE 		= 		make
 MAKE_CLEAN	= 		make clean
 MAKE_FCLEAN = 		make fclean
 
-COMPIL = -lmlx -framework OpenGL -framework AppKit
+#COMPIL = -lmlx -framework OpenGL -framework AppKiti
+COMPIL = -I/usr/X11R6/include -I/usr/X11/include -L/usr/X11R6/lib -L/usr/X11/lib -lX11 -lXext -lmlx -framework OpenGL -framework AppKit 
 
 AUTHOR	= adevos & tverdood
 
