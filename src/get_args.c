@@ -6,7 +6,7 @@
 /*   By: Verdoodt <Verdoodt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 12:16:37 by devoma            #+#    #+#             */
-/*   Updated: 2023/05/21 18:56:45 by Verdoodt         ###   ########.fr       */
+/*   Updated: 2023/05/26 16:52:53 by Verdoodt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,10 @@ char	**get_map(char	**map)
 		j++;
 	}
 	new_map[j] = NULL;
+// Amo --> techniquement on doit free 'map' sauf que ça bug 1/3 qd on le fait... Pourtant je ne vois nul par d'autre
+// ou on reutilise 'map' .... ??? 
+//	free_map(map);
+//
 	return (new_map);
 }
 
