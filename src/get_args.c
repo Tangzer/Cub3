@@ -6,7 +6,7 @@
 /*   By: Verdoodt <Verdoodt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 12:16:37 by devoma            #+#    #+#             */
-/*   Updated: 2023/05/28 12:40:21 by Verdoodt         ###   ########.fr       */
+/*   Updated: 2023/05/28 20:01:14 by Verdoodt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,11 +89,10 @@ char	*path(char *line, int num, char *path)
 {
 	int		i;
 	int		count;
-	// char	*path;
 
 	i = 0;
-	count = malloc_count(line) + 1;
-	path = malloc(sizeof(char) * count);
+	count = malloc_count(line);
+	path = malloc(sizeof(char) * count + 1);
 	protect_malloc(path);
 	count = 0;
 	while (line[i] && (line[i] == ' ' || line[i] == '\t'))
@@ -109,6 +108,5 @@ char	*path(char *line, int num, char *path)
 		i++;
 	}
 	path[count] = '\0';
-	printf("path = %s\n", path);
 	return (path);
 }
