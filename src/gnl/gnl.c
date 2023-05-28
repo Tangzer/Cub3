@@ -6,7 +6,7 @@
 /*   By: Verdoodt <Verdoodt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 12:16:45 by devoma            #+#    #+#             */
-/*   Updated: 2023/05/26 16:42:07 by Verdoodt         ###   ########.fr       */
+/*   Updated: 2023/05/27 12:00:10 by Verdoodt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,10 @@ char	*get_next_line(int fd)
 	return (result);
 }
 
-char	**reading_file(int fd, int line_count)
+char	**reading_file(int fd, int line_count, char **map)
 {
 	int		i;
 	char	*line;
-	char	**map;
 
 	i = 0;
 	map = malloc(sizeof(char *) * line_count);

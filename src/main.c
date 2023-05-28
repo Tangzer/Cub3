@@ -6,7 +6,7 @@
 /*   By: Verdoodt <Verdoodt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 12:17:05 by devoma            #+#    #+#             */
-/*   Updated: 2023/05/25 20:40:45 by Verdoodt         ###   ########.fr       */
+/*   Updated: 2023/05/27 11:58:39 by Verdoodt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ int	main(int ac, char **av)
 	char		**map;
 	t_data		data;
 
-	map = check_arguments(ac, av);
+	map = NULL;
+	map = check_arguments(ac, av, map);
 	if (!map)
 		exit(0);
 	data.args = create_struct(map);

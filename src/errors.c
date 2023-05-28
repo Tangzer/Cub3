@@ -6,17 +6,16 @@
 /*   By: Verdoodt <Verdoodt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 12:16:23 by devoma            #+#    #+#             */
-/*   Updated: 2023/05/26 00:38:41 by Verdoodt         ###   ########.fr       */
+/*   Updated: 2023/05/27 12:03:01 by Verdoodt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/cub3d.h"
 
-char	**check_arguments(int ac, char **av)
+char	**check_arguments(int ac, char **av, char **map)
 {
 	int		fd;
 	int		malloc_count;
-	char	**map;
 
 	if (ac != 2)
 	{
@@ -35,7 +34,6 @@ char	**check_arguments(int ac, char **av)
 		return (NULL);
 	}
 	malloc_count = reading_lines(fd) + 1;
-	map = NULL;
 	map = check_arguments_2(av, malloc_count, map);
 	return (map);
 }
@@ -50,7 +48,7 @@ char	**check_arguments_2(char **av, int count, char **map)
 		printf("Error\nImpossible d'ouvrir le fichier '.cub'.\n");
 		return (NULL);
 	}
-	map = reading_file(fd, count);
+	map = reading_file(fd, count, map);
 	close(fd);
 	if (map == NULL)
 	{

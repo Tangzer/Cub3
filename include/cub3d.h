@@ -6,7 +6,7 @@
 /*   By: Verdoodt <Verdoodt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 12:16:06 by devoma            #+#    #+#             */
-/*   Updated: 2023/05/26 00:39:18 by Verdoodt         ###   ########.fr       */
+/*   Updated: 2023/05/27 12:36:13 by Verdoodt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -167,12 +167,12 @@ int			main(int ac, char **av);
 //gnl.c
 char		*gnl_loop(int fd, char *static_line);
 char		*get_next_line(int fd);
-char		**reading_file(int fd, int line_count);
+char		**reading_file(int fd, int line_count, char **map);
 int			reading_lines(int fd);
 int			is_empty_str(char *line);
 
 //errors.c
-char		**check_arguments(int ac, char **av);
+char		**check_arguments(int ac, char **av, char **map);
 char		**check_arguments_2(char **av, int count, char **map);
 int			check_new_lines(char **map);
 int			check_extension(char *str);
@@ -235,7 +235,7 @@ int			skip_empty_lines(char **map, int n);
 char		*get_arguments(char **map, char id, int num);
 char		*path(char	*line, int num);
 int			malloc_count(char *line);
-char		**get_map(char	**map);
+char		**get_map(char	**map, char **new_map);
 int			map_malloc_count(char **map);
 
 //struct.c

@@ -6,7 +6,7 @@
 /*   By: Verdoodt <Verdoodt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 12:18:59 by devoma            #+#    #+#             */
-/*   Updated: 2023/05/26 16:50:04 by Verdoodt         ###   ########.fr       */
+/*   Updated: 2023/05/27 12:35:36 by Verdoodt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ t_matrix	*create_struct(char **map)
 	args->c2 = ft_atoi(temp_ceiling[1]);
 	args->c3 = ft_atoi(temp_ceiling[2]);
 	free_map(temp_ceiling);
-	args->map = get_map(map);
+	args->map = get_map(map, args->map);
 	return (args);
 }
 

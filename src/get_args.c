@@ -6,7 +6,7 @@
 /*   By: Verdoodt <Verdoodt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 12:16:37 by devoma            #+#    #+#             */
-/*   Updated: 2023/05/26 16:52:53 by Verdoodt         ###   ########.fr       */
+/*   Updated: 2023/05/28 11:40:06 by Verdoodt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,11 @@ int	map_malloc_count(char **map)
 	return (count + 1);
 }
 
-char	**get_map(char	**map)
+char	**get_map(char	**map, char **new_map)
 {
 	int		i;
 	int		j;
 	int		count;
-	char	**new_map;
 
 	i = 0;
 	j = 0;
@@ -63,15 +62,12 @@ char	**get_map(char	**map)
 		i++;
 	while (map[i])
 	{
-		new_map[j] = map[i];
+		new_map[j] = ft_strdup(map[i]);
 		i++;
 		j++;
 	}
 	new_map[j] = NULL;
-// Amo --> techniquement on doit free 'map' sauf que ça bug 1/3 qd on le fait... Pourtant je ne vois nul par d'autre
-// ou on reutilise 'map' .... ??? 
-//	free_map(map);
-//
+	free_map(map);
 	return (new_map);
 }
 
