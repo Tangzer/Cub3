@@ -6,7 +6,7 @@
 /*   By: Verdoodt <Verdoodt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 12:18:59 by devoma            #+#    #+#             */
-/*   Updated: 2023/05/27 12:35:36 by Verdoodt         ###   ########.fr       */
+/*   Updated: 2023/05/28 12:39:15 by Verdoodt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ t_matrix	*create_struct(char **map)
 
 	args = malloc(sizeof(t_matrix));
 	protect_malloc(args);
-	args->north = get_arguments(map, 'N', 2);
-	args->south = get_arguments(map, 'S', 2);
-	args->west = get_arguments(map, 'W', 2);
-	args->east = get_arguments(map, 'E', 2);
-	args->floor = get_arguments(map, 'F', 1);
-	args->ceiling = get_arguments(map, 'C', 1);
+	args->north = get_arguments(map, 'N', 2, args->north);
+	args->south = get_arguments(map, 'S', 2, args->south);
+	args->west = get_arguments(map, 'W', 2, args->west);
+	args->east = get_arguments(map, 'E', 2, args->east);
+	args->floor = get_arguments(map, 'F', 1, args->floor);
+	args->ceiling = get_arguments(map, 'C', 1, args->ceiling);
 	temp_floor = ft_split(args->floor, ',');
 	args->f1 = ft_atoi(temp_floor[0]);
 	args->f2 = ft_atoi(temp_floor[1]);
@@ -37,6 +37,7 @@ t_matrix	*create_struct(char **map)
 	args->c3 = ft_atoi(temp_ceiling[2]);
 	free_map(temp_ceiling);
 	args->map = get_map(map, args->map);
+	free_map(map);
 	return (args);
 }
 

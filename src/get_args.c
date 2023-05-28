@@ -6,13 +6,13 @@
 /*   By: Verdoodt <Verdoodt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 12:16:37 by devoma            #+#    #+#             */
-/*   Updated: 2023/05/28 11:40:06 by Verdoodt         ###   ########.fr       */
+/*   Updated: 2023/05/28 12:40:21 by Verdoodt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/cub3d.h"
 
-char	*get_arguments(char **map, char id, int num)
+char	*get_arguments(char **map, char id, int num, char *path_)
 {
 	int	i;
 	int	j;
@@ -24,7 +24,7 @@ char	*get_arguments(char **map, char id, int num)
 		while (map[i][j] && (map[i][j] == ' ' || map[i][j] == '\t'))
 			j++;
 		if (map[i][j] && map[i][j] == id)
-			return (path(map[i], num));
+			return (path(map[i], num, path_));
 		i++;
 	}
 	return (NULL);
@@ -67,7 +67,6 @@ char	**get_map(char	**map, char **new_map)
 		j++;
 	}
 	new_map[j] = NULL;
-	free_map(map);
 	return (new_map);
 }
 
@@ -86,11 +85,11 @@ int	malloc_count(char *line)
 	return (count);
 }
 
-char	*path(char *line, int num)
+char	*path(char *line, int num, char *path)
 {
 	int		i;
 	int		count;
-	char	*path;
+	// char	*path;
 
 	i = 0;
 	count = malloc_count(line) + 1;
@@ -110,5 +109,6 @@ char	*path(char *line, int num)
 		i++;
 	}
 	path[count] = '\0';
+	printf("path = %s\n", path);
 	return (path);
 }

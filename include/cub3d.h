@@ -6,7 +6,7 @@
 /*   By: Verdoodt <Verdoodt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 12:16:06 by devoma            #+#    #+#             */
-/*   Updated: 2023/05/27 12:36:13 by Verdoodt         ###   ########.fr       */
+/*   Updated: 2023/05/28 12:38:20 by Verdoodt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -232,8 +232,8 @@ int			is_id_3(char *map_line, int j);
 int			skip_empty_lines(char **map, int n);
 
 //get_args.c
-char		*get_arguments(char **map, char id, int num);
-char		*path(char	*line, int num);
+char		*get_arguments(char **map, char id, int num, char *path);
+char		*path(char	*line, int num, char *path);
 int			malloc_count(char *line);
 char		**get_map(char	**map, char **new_map);
 int			map_malloc_count(char **map);
