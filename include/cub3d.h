@@ -6,7 +6,7 @@
 /*   By: Verdoodt <Verdoodt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 12:16:06 by devoma            #+#    #+#             */
-/*   Updated: 2023/05/28 19:39:53 by Verdoodt         ###   ########.fr       */
+/*   Updated: 2023/05/29 18:03:35 by Verdoodt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,13 @@
 # define D				2
 # define W				13
 
-/*# define RIGHT	65363
-# define LEFT	65361
-# define ESC	65307
-# define A		97
-# define S		115
-# define D		100
-# define W		119*/
+// # define RIGHT	65363
+// # define LEFT	65361
+// # define ESC	65307
+// # define A		97
+// # define S		115
+// # define D		100
+// # define W		119
 
 # define BUFFER_SIZE 10
 
@@ -240,6 +240,6 @@ int			map_malloc_count(char **map);
 
 //struct.c
 t_matrix	*create_struct(char **map);
-void		destroy_struct(t_matrix *args);
+void		destroy_struct(t_data *data, t_matrix *args);
 
 #endif

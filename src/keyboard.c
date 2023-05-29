@@ -6,7 +6,7 @@
 /*   By: Verdoodt <Verdoodt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 12:16:59 by devoma            #+#    #+#             */
-/*   Updated: 2023/05/28 11:37:26 by Verdoodt         ###   ########.fr       */
+/*   Updated: 2023/05/29 18:03:06 by Verdoodt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,17 @@ int	key_ft(int key, t_data *data)
 {
 	if (key == RIGHT)
 		rotate_right(data, -ROTATE_SPEED);
-	if (key == LEFT)
+	else if (key == LEFT)
 		rotate_right(data, ROTATE_SPEED);
-	if (key == A)
+	else if (key == A)
 		move_left(data);
-	if (key == D)
+	else if (key == D)
 		move_right(data);
-	if (key == W)
+	else if (key == W)
 		move_up(data);
-	if (key == S)
+	else if (key == S)
 		move_down(data);
-	if (key == ESC)
+	else if (key == ESC)
 		ft_close(key, data);
 	init_win(data);
 	return (0);
@@ -35,6 +35,7 @@ int	key_ft(int key, t_data *data)
 int	ft_close(int keycode, t_data *data)
 {
 	(void)keycode;
-	(void)data;
+	if (data->args)
+		destroy_struct(data, data->args);
 	exit (0);
 }

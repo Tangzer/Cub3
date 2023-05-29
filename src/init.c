@@ -6,7 +6,7 @@
 /*   By: Verdoodt <Verdoodt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 12:16:52 by devoma            #+#    #+#             */
-/*   Updated: 2023/05/28 21:23:01 by Verdoodt         ###   ########.fr       */
+/*   Updated: 2023/05/29 16:42:58 by Verdoodt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ void	init_struct_img(t_data *data)
 	i = -1;
 	while (++i < 5)
 	{
-		data->img[i].ptr = 0;
-		data->img[i].img = 0;
+		data->img[i].ptr = NULL;
+		data->img[i].img = NULL;
 		data->img[i].bpp = 0;
 		data->img[i].width = 0;
 		data->img[i].height = 0;

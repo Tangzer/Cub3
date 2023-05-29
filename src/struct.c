@@ -6,7 +6,7 @@
 /*   By: Verdoodt <Verdoodt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 12:18:59 by devoma            #+#    #+#             */
-/*   Updated: 2023/05/28 12:39:15 by Verdoodt         ###   ########.fr       */
+/*   Updated: 2023/05/29 18:02:46 by Verdoodt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,25 @@ t_matrix	*create_struct(char **map)
 	return (args);
 }
 
-void	destroy_struct(t_matrix *args)
+void	destroy_struct(t_data *data, t_matrix *args)
 {
-	free(args->north);
-	free(args->south);
-	free(args->west);
-	free(args->east);
-	free(args->floor);
-	free(args->ceiling);
-	free_map(args->map);
+	(void)data;
+	if (args->north)
+		free(args->north);
+	if (args->south)
+		free(args->south);
+	if (args->west)
+		free(args->west);
+	if (args->east)
+		free(args->east);
+	if (args->floor)
+		free(args->floor);
+	if (args->ceiling)
+		free(args->ceiling);
+	if (data->img)
+		free(data->img);
+	if (data->rcasting)
+		free(data->rcasting);
+	if (args->map)
+		free_map(args->map);
 }
