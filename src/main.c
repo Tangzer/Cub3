@@ -6,7 +6,7 @@
 /*   By: Verdoodt <Verdoodt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 12:17:05 by devoma            #+#    #+#             */
-/*   Updated: 2023/05/27 11:58:39 by Verdoodt         ###   ########.fr       */
+/*   Updated: 2023/05/29 17:35:17 by Verdoodt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ int	main(int ac, char **av)
 	mlx_hook(data.game->win, 17, 1L << 0, ft_close, &data);
 	mlx_hook(data.game->win, 2, 1L << 0, key_ft, &data);
 	mlx_loop(data.game->mlx);
-	destroy_struct(data.args);
+	destroy_struct(&data, data.args);
 	exit(0);
 }
