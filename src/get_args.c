@@ -6,7 +6,7 @@
 /*   By: Verdoodt <Verdoodt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 12:16:37 by devoma            #+#    #+#             */
-/*   Updated: 2023/05/28 20:01:14 by Verdoodt         ###   ########.fr       */
+/*   Updated: 2023/05/28 20:04:01 by Verdoodt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,7 @@ char	*path(char *line, int num, char *path)
 	int		count;
 
 	i = 0;
+//Amo ici le + 1 doit aller dans 'count' ou dans la taille du malloc() ?
 	count = malloc_count(line);
 	path = malloc(sizeof(char) * count + 1);
 	protect_malloc(path);

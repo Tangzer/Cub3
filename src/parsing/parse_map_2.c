@@ -6,7 +6,7 @@
 /*   By: Verdoodt <Verdoodt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 12:17:39 by devoma            #+#    #+#             */
-/*   Updated: 2023/05/24 12:50:11 by Verdoodt         ###   ########.fr       */
+/*   Updated: 2023/05/29 10:45:09 by Verdoodt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,10 +78,10 @@ int	is_id(char *map_line, int j)
 		j++;
 	if (map_line[j] && (map_line[j] == 'F' || map_line[j] == 'C'))
 		return (is_id_3(map_line, j));
-	else if ((map_line[j] == 'N' && map_line[j + 1] && map_line[j + 1] == 'O')
+	else if (map_line[j] && ((map_line[j] == 'N' && map_line[j + 1] && map_line[j + 1] == 'O')
 		|| (map_line[j] == 'S' && map_line[j + 1] && map_line[j + 1] == 'O')
 		|| (map_line[j] == 'W' && map_line[j + 1] && map_line[j + 1] == 'E')
-		|| (map_line[j] == 'E' && map_line[j + 1] && map_line[j + 1] == 'A'))
+		|| (map_line[j] == 'E' && map_line[j + 1] && map_line[j + 1] == 'A')))
 	{
 		new_line = create_line(map_line, j);
 		if (!new_line || check_textures(new_line) == 0)
@@ -117,6 +117,4 @@ int	is_id_2(char *map_line, int j, char *new_line)
 		free(new_line);
 		return (6);
 	}
-	free(new_line);
-	return (0);
 }
