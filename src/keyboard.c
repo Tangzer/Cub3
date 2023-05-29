@@ -36,5 +36,6 @@ int	ft_close(int keycode, t_data *data)
 {
 	(void)keycode;
 	(void)data;
+	destroy_struct(data->args);.
 	exit (0);
 }
