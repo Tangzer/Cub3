@@ -36,7 +36,5 @@ int	ft_close(int keycode, t_data *data)
 {
 	(void)keycode;
 	(void)data;
-	system("leaks cub3D");
 	exit (0);
-	return (0);
 }

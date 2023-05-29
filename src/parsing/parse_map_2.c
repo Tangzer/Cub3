@@ -78,10 +78,12 @@ int	is_id(char *map_line, int j)
 		j++;
 	if (map_line[j] && (map_line[j] == 'F' || map_line[j] == 'C'))
 		return (is_id_3(map_line, j));
-	else if (map_line[j] && ((map_line[j] == 'N' && map_line[j + 1] && map_line[j + 1] == 'O')
-		|| (map_line[j] == 'S' && map_line[j + 1] && map_line[j + 1] == 'O')
-		|| (map_line[j] == 'W' && map_line[j + 1] && map_line[j + 1] == 'E')
-		|| (map_line[j] == 'E' && map_line[j + 1] && map_line[j + 1] == 'A')))
+	else if (map_line[j] && ((map_line[j] == 'N' && map_line[j + 1]
+				&& map_line[j + 1] == 'O')
+			|| (map_line[j] == 'S' && map_line[j + 1] && map_line[j + 1] == 'O')
+			|| (map_line[j] == 'W' && map_line[j + 1] && map_line[j + 1] == 'E')
+			|| (map_line[j] == 'E' && map_line[j + 1]
+				&& map_line[j + 1] == 'A')))
 	{
 		new_line = create_line(map_line, j);
 		if (!new_line || check_textures(new_line) == 0)

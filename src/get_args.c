@@ -91,7 +91,6 @@ char	*path(char *line, int num, char *path)
 	int		count;
 
 	i = 0;
-//Amo ici le + 1 doit aller dans 'count' ou dans la taille du malloc() ?
 	count = malloc_count(line);
 	path = malloc(sizeof(char) * count + 1);
 	protect_malloc(path);
