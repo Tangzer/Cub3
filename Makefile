@@ -6,7 +6,7 @@ NAME	= cub3D
 
 CC 		= gcc
 
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror -Imlx
 
 DFLAGS	= -MMD -MF $(@:.o=.d)
 MAKE 		= 		make

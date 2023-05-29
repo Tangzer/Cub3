@@ -43,7 +43,6 @@ t_matrix	*create_struct(char **map)
 
 void	destroy_struct(t_data *data, t_matrix *args)
 {
-	(void)data;
 	if (args->north)
 		free(args->north);
 	if (args->south)

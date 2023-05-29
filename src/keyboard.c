@@ -27,15 +27,15 @@ int	key_ft(int key, t_data *data)
 	else if (key == S)
 		move_down(data);
 	else if (key == ESC)
-		ft_close(key, data);
+		ft_close(data);
 	init_win(data);
 	return (0);
 }
 
-int	ft_close(int keycode, t_data *data)
+int	ft_close(t_data *data)
 {
-	(void)keycode;
 	if (data->args)
 		destroy_struct(data, data->args);
+	system("leaks cub3d");
 	exit (0);
 }

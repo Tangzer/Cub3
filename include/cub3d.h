@@ -159,7 +159,7 @@ void		init_player_pos(t_data *data, int i, int j);
 int			check_nwse(t_data *data);
 void		ft_get_data_addr(t_data *data);
 void		get_img_xpm(t_data *data);
-int			ft_close(int keycode, t_data *data);
+int			ft_close(t_data *data);
 
 //main.c
 int			main(int ac, char **av);
